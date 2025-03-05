@@ -1,0 +1,27 @@
+mp4 = "output.mp4"
+bgm = "tove_lo_sg_lewis_busy_girl.ogg"  # 添加背景音乐
+
+[[item]]
+file = "1.jpg"
+duration = "1.5s"
+txt = "这是第一帧字幕"
+
+[[item]]
+file = "2.jpg"
+duration = "2.5s"
+txt = "这是第二帧字幕"
+
+[[item]]
+file = "3.jpg"
+duration = "2.1s"
+txt = "这是第三帧字幕"
+
+[[item]]
+file = "4.jpg"
+duration = "5.2s"
+txt = "这是配置"
+
+[[item]]
+file = "5.jpg"
+duration = "4.1s"
+txt = "这是代码"
