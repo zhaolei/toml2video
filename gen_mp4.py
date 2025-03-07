@@ -81,8 +81,19 @@ def generate_video_from_toml(config_path):
         ofiles.append(tmp_v)
 
     print(ofiles)
-    return ofiles
+    merge_videos(ofiles, output_video)
+    print("mp4: {output_file}")
 
+def merge_videos(mp4_list, output_file):
+   # 创建临时文件 list.txt
+    list_file = "temp/filelist.txt"
+    with open(list_file, "w", encoding="utf-8") as f:
+        for mp4 in mp4_list:
+            mp4 = os.path.basename(mp4)
+            f.write(f"file '{mp4}'\n")
+
+    # 调用 ffmpeg 合并视频
+    ffmpeg.input(list_file, format="concat", safe=0).output(output_file, c="copy").run(overwrite_output=True) 
 
 # 运行示例
 if __name__ == "__main__":
